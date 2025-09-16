@@ -1,27 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package tools;
 
 import javax.swing.JComponent;
 import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author u07881654104
- */
+
 public class Util {
-    public static void habilitar(boolean valor, JComponent ... componentes){
-        for (int i = 0; i < componentes.length; i ++){
-            componentes[i].setEnabled(valor);
+    public static void habilitar(boolean valor, JComponent... componentes) {
+        for (JComponent componente : componentes) {
+            componente.setEnabled(valor);
         }
     }
     
-    public static void limpar(JComponent ... componentes){
-        for (int i = 0; i < componentes.length; i++) {
-            ((JTextField) componentes[i]).setText("");
-            
+    public static void limpar(JComponent... componentes) {
+        for (JComponent componente : componentes) {
+            if (componente instanceof JTextField) {
+                ((JTextField) componente).setText("");
+            }
         }
     }
+    
+    public static void mensagem(String cad) {
+        JOptionPane.showMessageDialog(null, cad);
+    }
+    public static void strToint(String num){
+        return integer.value0f(num);
+    }
+    public static void intToDouble(String num){
+        return 0;
+    }
+    public static void doubleToStr(double num){
+        return "";
+    }
+    public static void strToint(String num){
+        return integer.value0f(num);
+    }
+    
 }
